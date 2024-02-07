@@ -15,7 +15,7 @@ export const useAuth = () => {
 
 
   const me = async () => {
-    const { data, error } = await useFetch<any>(`http://localhost:8080/auth/user`, {
+    const { data, error } = await useFetch<any>(`${import.meta.env.VITE_API_URL}/auth/user`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${access_token.value}`
